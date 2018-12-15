@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Rules.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Validation="clr-namespace:Rules" mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+	<UserControl.Resources>
+		<LinearGradientBrush x:Key="Brush1" EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#FF9AAB9D" Offset="0"/>
+			<GradientStop Color="#FF63926B" Offset="1"/>
+		</LinearGradientBrush>
+	</UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Margin="10 10 10 10" Background="White">
+        <StackPanel>
+            <Grid>
+            	<Grid.Background>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<GradientStop Color="#FFA093CB" Offset="0"/>
+            			<GradientStop Color="#FF675A94" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Grid.Background>
+            	<StackPanel Margin="0,0,0,18" Orientation="Vertical" d:LayoutOverrides="Height">
+            		<Border Height="34" Margin="0,0,0,7">
+            			<Border.Background>
+            				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            					<LinearGradientBrush.RelativeTransform>
+            						<TransformGroup>
+            							<ScaleTransform CenterX="0.5" CenterY="0.5"/>
+            							<SkewTransform CenterX="0.5" CenterY="0.5"/>
+            							<RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+            							<TranslateTransform/>
+            						</TransformGroup>
+            					</LinearGradientBrush.RelativeTransform>
+            					<GradientStop Color="#FF594E7E" Offset="0.53"/>
+            					<GradientStop Color="#FF73679C" Offset="1"/>
+            					<GradientStop Color="#FF6F6494"/>
+            				</LinearGradientBrush>
+            			</Border.Background>
+            
+            			<TextBlock Width="81" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="26.667" Foreground="White"><Run Text="Tenant"/></TextBlock>
+            		</Border>
+            		<StackPanel Orientation="Horizontal">
+            			<TextBlock VerticalAlignment="Center" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right" Margin="0,0,12,0"><Run Text="Przykład:"/></TextBlock>
+            			<ComboBox Width="170" x:Name="Sample" SelectionChanged="Sample_SelectionChanged" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667">
+            				<ComboBoxItem Content="BusinessRule" IsSelected="True" />
+            				<ComboBoxItem Content="Formula" />
+            				<ComboBoxItem Content="Discount"/>
+            				<ComboBoxItem Content="Validation"/>
+            				<ComboBoxItem Content="Custom"/>
+            			</ComboBox>
+            		</StackPanel>
+            		<StackPanel Orientation="Horizontal" x:Name="D" Margin="0,3,0,0" Visibility="Collapsed">
+            			<TextBlock VerticalAlignment="Center" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right" Margin="0,0,12,0"><Run Text="Discount:"/></TextBlock>
+            			<TextBox Text="{Binding User.Discount, Mode=TwoWay}" BorderThickness="1" Width="100" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"/>
+            		</StackPanel>
+            		<StackPanel Orientation="Horizontal" x:Name="CR" Margin="0,3,0,0" Visibility="Collapsed">
+            			<TextBlock VerticalAlignment="Center" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right" Margin="0,0,12,0"><Run Text="Reguła:"/></TextBlock>
+            			<TextBox x:Name="CustomRule" Text="Total=Quantity * ProductPrice * User.Discount" Width="450" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"/>
+            		</StackPanel>
+            		<StackPanel Orientation="Horizontal" x:Name="CD" Margin="0,3,0,0">
+            			<TextBlock VerticalAlignment="Center" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right" Margin="0,0,12,0"><Run Text="Calculation direction:"/></TextBlock>
+            			<ComboBox SelectionChanged="ComboBox_SelectionChanged" Width="171" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667">
+            				<ComboBoxItem Content="FromTotal" />
+            				<ComboBoxItem Content="FromQuantity" IsSelected="True"/>
+            			</ComboBox>
+            		</StackPanel>
+            		<Button Click="Button_Click_1" Height="41" HorizontalAlignment="Right" Width="123" VerticalAlignment="Bottom" Margin="0,17,13,0">
+            			<TextBlock FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"><Run Text="Rekonfiguruj"/></TextBlock>
+            		</Button>
+            	</StackPanel>
+        	</Grid>
+            <Border Height="34" Margin="0">
+            	<Border.Background>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<LinearGradientBrush.RelativeTransform>
+            				<TransformGroup>
+            					<ScaleTransform CenterX="0.5" CenterY="0.5"/>
+            					<SkewTransform CenterX="0.5" CenterY="0.5"/>
+            					<RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+            					<TranslateTransform/>
+            				</TransformGroup>
+            			</LinearGradientBrush.RelativeTransform>
+            			<GradientStop Color="#FF4E7E5F" Offset="0.53"/>
+            			<GradientStop Color="#FF7FA983" Offset="1"/>
+            			<GradientStop Color="#FF7CA783"/>
+            		</LinearGradientBrush>
+            	</Border.Background>
+            
+            	<TextBlock FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="26.667" Foreground="White" Text="Invoice Line" HorizontalAlignment="Center"/>
+            </Border>
+            <StackPanel Orientation="Vertical" Height="130" Background="{StaticResource Brush1}">
+            	<StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,12,0" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right"><Run Text="ProductPrice:"/></TextBlock>
+            		<TextBox Text="{Binding InvoiceLine.ProductPrice, Mode=TwoWay}" BorderThickness="1" Width="169" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"/>
+            	</StackPanel>
+            	<StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+            		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,12,0" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right"><Run Text="Quantity:"/></TextBlock>
+            		<TextBox Text="{Binding InvoiceLine.Quantity, Mode=TwoWay}" BorderThickness="1" Width="169" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"/>
+            	</StackPanel>
+            	<StackPanel Orientation="Horizontal" Margin="0,3,0,0">
+            		<TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,12,0" Width="206" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667" TextAlignment="Right"><Run Text="Total:"/></TextBlock>
+            		<TextBox Text="{Binding InvoiceLine.Total, Mode=TwoWay}" BorderThickness="1" Width="169" FontFamily="Fonts/Fonts.zip#Segoe UI" FontSize="18.667"/>
+            		<Validation:ValidationStatusControl DisplayMember="Total" Entity="{Binding InvoiceLine}" />
+            	</StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

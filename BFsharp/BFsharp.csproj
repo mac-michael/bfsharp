@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF60D7A5-D346-4245-8DC6-863B95C9286A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFsharp</RootNamespace>
+    <AssemblyName>BFsharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET;NASYNC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\BFsharp.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\BFsharp.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.14009, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SolutionItems\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AsyncCtpLibrary" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), `(^|;)\s*ASYNC($|;)`))">
+      <HintPath>..\SolutionItems\Async\AsyncCtpLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityBase\AbstractEntityBase.cs" />
+    <Compile Include="BrokenRule\BrokenRuleCollection.cs" />
+    <Compile Include="BrokenRule\BrokenRuleEventArgs.cs" />
+    <Compile Include="BrokenRule\BrokenRuleWithSource.cs" />
+    <Compile Include="BrokenRule\BusinessRuleBrokenRule.cs" />
+    <Compile Include="Caching\ExpressionComparison.cs" />
+    <Compile Include="Caching\ExpressionEnumeration.cs" />
+    <Compile Include="Caching\ExpressionEqualityComparer.cs" />
+    <Compile Include="Caching\ExpressionTransformer.cs" />
+    <Compile Include="Caching\ExpressionTreeNormalizer.cs" />
+    <Compile Include="Caching\ExpressionVisitor.cs" />
+    <Compile Include="Caching\Extensions.cs" />
+    <Compile Include="Caching\HashCodeCalculation.cs" />
+    <Compile Include="Caching\SubtreeEvaluator.cs" />
+    <Compile Include="ClusterTraversalMode.cs" />
+    <Compile Include="CustomRules\CompareValidation.cs" />
+    <Compile Include="Debugger\DebugHelpers.cs" />
+    <Compile Include="Dependency\PropertyPath.cs" />
+    <Compile Include="CustomRules\PatternValidation.cs" />
+    <Compile Include="CustomRules\PropertyValidationAttribute.cs" />
+    <Compile Include="CustomRules\RangeAttribute.cs" />
+    <Compile Include="CustomRules\ValidationFactory.cs" />
+    <Compile Include="Dependency\DependencyNode.cs" />
+    <Compile Include="Dependency\DependencyVisitor.cs" />
+    <Compile Include="Dependency\PropertyPathElement.cs" />
+    <Compile Include="Dependency\PropertyPathElementType.cs" />
+    <Compile Include="DynamicProperties\DynamicObjectEmitter.cs" />
+    <Compile Include="DynamicProperties\DynamicPropertyCollection.cs" />
+    <Compile Include="CustomRules\EmailValidation.cs" />
+    <Compile Include="DynamicProperties\DynamicPropertyMetadataCollection.cs" />
+    <Compile Include="DynamicProperties\TypedProxyBase.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GlobalRuleDecoratorExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GlobalRuleDecoratorExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GlobalRulePrototypeExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GlobalRulePrototypeExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\EntityBaseGraphMonitoringExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\ManualIEntityBaseGraphMonitoringStrategy.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\GraphMonitoringStrategy.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\NoGraphMonitoringExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\IgnoreTraversal.cs" />
+    <Compile Include="ExtensionsOptions\ExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\ExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\AttributeRulesExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\AttributeRulesExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\DynamicPropertiesExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\DynamicPropertiesExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\PrecompiledDynamicPropertiesExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\PrecompiledRuleDecoratorExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\PrecompiledRuleInitializerExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\EntityBaseGraphMonitoringExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\EntityBaseGraphMonitoringStrategy.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\NoGraphMonitoringStrategy.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\HierarchyGraphMonitoringStrategy.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RuleDecoratorExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RuleInitializerExtensionPointFactory.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RulePrototypeExtensionPointFactory.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="ExtensionsOptions\ExtensionsOptions.cs" />
+    <Compile Include="ExtensionsOptions\IExtensionOptions.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\NoGraphMonitoringExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\GraphMonitoring\PredefinedGraphMonitoringStrategy.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RuleDecoratorExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RuleInitializerExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\Extensions\RulePrototypeExtensionPoint.cs" />
+    <Compile Include="ExtensionsOptions\PropertiesInitAttribute.cs" />
+    <Compile Include="ExtensionsOptions\RuleDecoratorAttribute.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="DynamicProperties\DynamicPropertyMetadata.cs" />
+    <Compile Include="DynamicProperties\InvalidPropertyException.cs" />
+    <Compile Include="FormulaExtensions\CallProviderExtensions.cs" />
+    <Compile Include="FormulaExtensions\DynamicProperty.cs" />
+    <Compile Include="FormulaExtensions\DynamicPropertyProvider.cs" />
+    <Compile Include="CustomRules\MaxLengthValidation.cs" />
+    <Compile Include="CustomRules\RequiredValidation.cs" />
+    <Compile Include="EntityBase\IEntityBase.cs" />
+    <Compile Include="IEntityExtensions.cs" />
+    <Compile Include="Helpers\ObjectReferenceEqualityComparerer.cs" />
+    <Compile Include="Localization\ILocalizationInterceptor.cs" />
+    <Compile Include="Localization\LocalizationManager.cs" />
+    <Compile Include="Localization\LocalizationString.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizationString.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Caching\ExpressionCache.cs" />
+    <Compile Include="Rules\SwitchRule.cs" />
+    <Compile Include="Rules\RuleContext.cs" />
+    <Compile Include="Rules\RuleFactory.cs" />
+    <Compile Include="ExtensionsOptions\RuleInitAttribute.cs" />
+    <Compile Include="Rules\ActionRule\ActionRule.cs" />
+    <Compile Include="BrokenRule\BrokenRule.cs" />
+    <Compile Include="BrokenRule\BrokenRuleSeverity.cs" />
+    <Compile Include="BrokenRule\BrokenRuleToken.cs" />
+    <Compile Include="Rules\ActionRule\ActionRuleStartupMode.cs" />
+    <Compile Include="Rules\BusinessRule\BusinessRule.cs" />
+    <Compile Include="Rules\BusinessRule\BusinessRuleMode.cs" />
+    <Compile Include="Rules\BusinessRule\BusinessRuleStartupMode.cs" />
+    <Compile Include="Dependency\DependencyHelper.cs" />
+    <Compile Include="Dependency\DependecyExpressionVisitor.cs" />
+    <Compile Include="Dependency\DependencyTreeNode.cs" />
+    <Compile Include="Rules\BusinessRule\BusinessRuleTargetChangeAction.cs" />
+    <Compile Include="Rules\FuncValidationRule\PredefinedValidationRule.cs" />
+    <Compile Include="Helpers\PrecompilationHelper.cs" />
+    <Compile Include="Helpers\RuleDebugger.cs" />
+    <Compile Include="Rules\FuncValidationRule\ValidationRule.cs" />
+    <Compile Include="Rules\RuleEvaluationContext.cs" />
+    <Compile Include="Rules\FuncValidationRule\ValidationRuleStartupMode.cs" />
+    <Compile Include="Rules\IRuleOwner.cs" />
+    <Compile Include="Rules\RuleCollection.cs" />
+    <Compile Include="ExceptionFilter\RuleExceptionFilter.cs" />
+    <Compile Include="ExceptionFilter\RuleExceptionFilterBase.cs" />
+    <Compile Include="Rules\RuleAuthoringExtensions.cs" />
+    <Compile Include="Rules\RuleExtensions.cs" />
+    <Compile Include="Rules\RulePriority.cs" />
+    <Compile Include="Rules\RuleState.cs" />
+    <Compile Include="EntityBase\EntityBase.cs" />
+    <Compile Include="Dependency\ExpressionVisitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\Rule.cs" />
+    <Compile Include="EntityExtensions.cs" />
+    <Compile Include="CustomRules\StringRequiredValidation.cs" />
+    <Compile Include="EntityBase\EntityBaseTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityBaseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Undo\IdentityComparer.cs" />
+    <Compile Include="Undo\UndoExtensions.cs" />
+    <Compile Include="Rules\ValidationRuleBase.cs" />
+    <Compile Include="CustomRules\Validation.cs" />
+    <Compile Include="ValidationMode.cs" />
+    <Content Include="Ideas.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Localization\LocalizationString.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LocalizationString.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\BFsharp.snk" />
+    <None Include="Entity.g" />
+    <None Include="Rules\RuleHierarchy.cd" />
+    <None Include="EntityBase\EntityBaseTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityBaseTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFsharp.Formula\BFsharp.Formula.csproj">
+      <Project>{211E155D-C1C1-4980-8E6B-75FE57B109FB}</Project>
+      <Name>BFsharp.Formula</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.fr.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.pl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <Import Project="..\SolutionItems\PostSharp\PostSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

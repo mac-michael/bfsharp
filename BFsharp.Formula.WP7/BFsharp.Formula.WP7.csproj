@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1683EC01-1CAB-4CFD-A37B-84981CF477A0}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFsharp.Formula.WP7</RootNamespace>
+    <AssemblyName>BFsharp.Formula.WP7</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\BFsharp.Formula\BuildInfo.cs">
+      <Link>BuildInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\BuildInfoItem.cs">
+      <Link>BuildInfoItem.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Errors\ErrorInfo.cs">
+      <Link>Errors\ErrorInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Errors\FormulaLexer.Errors.cs">
+      <Link>Errors\FormulaLexer.Errors.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Errors\FormulaParser.Errors.cs">
+      <Link>Errors\FormulaParser.Errors.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Exceptions\FormulaCompilerException.cs">
+      <Link>Exceptions\FormulaCompilerException.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Exceptions\MethodNotFoundException.cs">
+      <Link>Exceptions\MethodNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Exceptions\ParameterNotFoundException.cs">
+      <Link>Exceptions\ParameterNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Exceptions\ParseException.cs">
+      <Link>Exceptions\ParseException.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\AggregateCallProvider.cs">
+      <Link>Extensibility\AggregateCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProvider.cs">
+      <Link>Extensibility\CallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\AssemblyCallProvider.cs">
+      <Link>Extensibility\CallProviders\AssemblyCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\DateCallProvider.cs">
+      <Link>Extensibility\CallProviders\DateCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\EmptyCallProvider.cs">
+      <Link>Extensibility\CallProviders\EmptyCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\FlatTypeCallProvider.cs">
+      <Link>Extensibility\CallProviders\FlatTypeCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\MathCallProvider.cs">
+      <Link>Extensibility\CallProviders\MathCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\MethodCallProviders.cs">
+      <Link>Extensibility\CallProviders\MethodCallProviders.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\TypeCallProvider.cs">
+      <Link>Extensibility\CallProviders\TypeCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\CallProviders\TypeExtensions.cs">
+      <Link>Extensibility\CallProviders\TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\ExtensionMethod.cs">
+      <Link>Extensibility\ExtensionMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\ICallProvider.cs">
+      <Link>Extensibility\ICallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\LambdaParameterCallProvider.cs">
+      <Link>Extensibility\LambdaParameterCallProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\Member.cs">
+      <Link>Extensibility\Member.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\Method.cs">
+      <Link>Extensibility\Method.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Extensibility\ParameterMethodBase.cs">
+      <Link>Extensibility\ParameterMethodBase.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\FormulaCompiler.cs">
+      <Link>FormulaCompiler.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\FormulaCompilerBuildInfoLevels.cs">
+      <Link>FormulaCompilerBuildInfoLevels.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\FormulaLexer.cs">
+      <Link>FormulaLexer.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\FormulaParser.cs">
+      <Link>FormulaParser.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Helper.cs">
+      <Link>Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\IASTTranslator\AbstractASTVisitor.cs">
+      <Link>IASTTranslator\AbstractASTVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\IASTTranslator\FormulaASTVisitor.cs">
+      <Link>IASTTranslator\FormulaASTVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\IASTTranslator\IASTTranslator.cs">
+      <Link>IASTTranslator\IASTTranslator.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Lambda\Lambda.cs">
+      <Link>Lambda\Lambda.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Lambda\Lambdas.cs">
+      <Link>Lambda\Lambdas.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Lambda\LambdaTypeDefinition.cs">
+      <Link>Lambda\LambdaTypeDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\BFsharp.Formula\Lambda\Param.cs">
+      <Link>Lambda\Param.cs</Link>
+    </Compile>
+    <Compile Include="Compiler\Compile1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Compile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Compiler\Conversion.cs" />
+    <Compile Include="Compiler\ExpressionCompiler.cs" />
+    <Compile Include="Compiler\ExpressionHelper.cs" />
+    <Compile Include="Compiler\ExpressionInterpreter.cs" />
+    <Compile Include="Compiler\ExpressionValidator.cs" />
+    <Compile Include="Compiler\ExpressionVisitor.cs" />
+    <Compile Include="Compiler\Extensions.cs" />
+    <Compile Include="Compiler\Interpreter.cs" />
+    <Compile Include="Compiler\Math.cs" />
+    <Compile Include="Missing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Antlr3.Runtime.WP7\Antlr3.Runtime.WP7.csproj">
+      <Project>{6183B20F-DD9B-4466-9FC1-4258BB411921}</Project>
+      <Name>Antlr3.Runtime.WP7</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Compiler\Compile.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Compile1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

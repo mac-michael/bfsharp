@@ -1,0 +1,308 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{5646F46E-A5C6-411B-BBED-EBA386F4EFC2}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Antlr3.Runtime.dll = SolutionItems\Antlr3.Runtime.dll
+		SolutionItems\BFsharp.snk = SolutionItems\BFsharp.snk
+		F.txt = F.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit", "NUnit", "{A98576CD-724B-4C62-85F1-B3AE1F927FDB}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\NUnit\nunit.framework.dll = SolutionItems\NUnit\nunit.framework.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight", "{F1B1B319-D17D-4C9F-ADCF-2204B5B287BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PEVerify", "PEVerify", "{C4AB5478-AAFC-4166-97D0-51875AA5CC09}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\PEVerify\PEVerify.exe = SolutionItems\PEVerify\PEVerify.exe
+		SolutionItems\PEVerify\PEVerify.exe.config = SolutionItems\PEVerify\PEVerify.exe.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{34EDF454-2B59-4A04-8207-A394F7C6638F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Formula", "BFsharp.Formula\BFsharp.Formula.csproj", "{211E155D-C1C1-4980-8E6B-75FE57B109FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp", "BFsharp\BFsharp.csproj", "{BF60D7A5-D346-4245-8DC6-863B95C9286A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Tests", "BFsharp.Tests\BFsharp.Tests.csproj", "{304AE734-8B74-430B-B310-ADE171E0F5A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1206050-836E-4814-8D05-6327952AAE97} = {A1206050-836E-4814-8D05-6327952AAE97}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Formula.Tests", "BFsharp.Formula.Tests\BFsharp.Formula.Tests.csproj", "{A1206050-836E-4814-8D05-6327952AAE97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Formula.SL", "BFsharp.Formula.SL\BFsharp.Formula.SL.csproj", "{E01E0C5C-6934-4C32-9711-1977BE2D59DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antlr3.Runtime.SL", "Antlr3.Runtime.SL\Antlr3.Runtime.SL.csproj", "{828C22AF-0032-49D7-B2B1-49971629A855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.SL", "BFsharp.SL\BFsharp.SL.csproj", "{58191DBE-5A25-4A73-A144-3D5DBC24C59C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.AOP", "BFsharp.AOP\BFsharp.AOP.csproj", "{D123BC07-822B-48DD-B275-96538CD6A8F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Samples.SL", "BFsharp.Samples.SL\BFsharp.Samples.SL.csproj", "{C1063EEC-4293-49CF-88F0-06F299132AB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.AOP.SL", "BFsharp.AOP.SL\BFsharp.AOP.SL.csproj", "{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Phone", "Phone", "{0E38E14D-4595-47D1-B0F8-A9F5F0D44381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.WP7", "BFsharp.WP7\BFsharp.WP7.csproj", "{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AOP", "AOP", "{68747E5C-B5FB-4830-8F0B-F8433FACAFF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Async", "Async", "{D11EDF7B-E68C-4A02-B2CA-1D1CDBF05885}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Async\AsyncCtpLibrary.dll = SolutionItems\Async\AsyncCtpLibrary.dll
+		SolutionItems\Async\AsyncCtpLibrary.xml = SolutionItems\Async\AsyncCtpLibrary.xml
+		SolutionItems\Async\AsyncCtpLibrary_Silverlight.dll = SolutionItems\Async\AsyncCtpLibrary_Silverlight.dll
+		SolutionItems\Async\AsyncCtpLibrary_Silverlight.xml = SolutionItems\Async\AsyncCtpLibrary_Silverlight.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.VisualStudioExtensions", "BFsharp.VisualStudioExtensions\BFsharp.VisualStudioExtensions.csproj", "{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Tests.SL", "BFsharp.Tests.SL\BFsharp.Tests.SL.csproj", "{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit.SL", "NUnit.SL", "{665B802D-5730-4B21-BA54-C4626CA5C148}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\NUnit.SL\Microsoft.Silverlight.Testing.dll = SolutionItems\NUnit.SL\Microsoft.Silverlight.Testing.dll
+		SolutionItems\NUnit.SL\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll = SolutionItems\NUnit.SL\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll
+		SolutionItems\NUnit.SL\NUnit.Silverlight.Compatibility.dll = SolutionItems\NUnit.SL\NUnit.Silverlight.Compatibility.dll
+		SolutionItems\NUnit.SL\NUnit.Silverlight.Framework.dll = SolutionItems\NUnit.SL\NUnit.Silverlight.Framework.dll
+		SolutionItems\NUnit.SL\NUnit.Silverlight.Metadata.dll = SolutionItems\NUnit.SL\NUnit.Silverlight.Metadata.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA433BD3-358B-47B2-9E7A-DBDD19CB0214}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SilverlightToolkit", "SilverlightToolkit", "{15C4C4B9-BBF0-4884-B41B-A3C9289C08F5}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\SilverlightToolkit\System.Windows.Controls.Toolkit.dll = SolutionItems\SilverlightToolkit\System.Windows.Controls.Toolkit.dll
+		SolutionItems\SilverlightToolkit\System.Windows.Controls.Toolkit.Internals.dll = SolutionItems\SilverlightToolkit\System.Windows.Controls.Toolkit.Internals.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Samples.WP7", "BFsharp.Samples.WP7\BFsharp.Samples.WP7.csproj", "{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.AOP.WP7", "BFsharp.AOP.WP7\BFsharp.AOP.WP7.csproj", "{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFsharp.Formula.WP7", "BFsharp.Formula.WP7\BFsharp.Formula.WP7.csproj", "{1683EC01-1CAB-4CFD-A37B-84981CF477A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antlr3.Runtime.WP7", "Antlr3.Runtime.WP7\Antlr3.Runtime.WP7.csproj", "{6183B20F-DD9B-4466-9FC1-4258BB411921}"
+EndProject
+Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211E155D-C1C1-4980-8E6B-75FE57B109FB}.Release|x86.ActiveCfg = Release|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF60D7A5-D346-4245-8DC6-863B95C9286A}.Release|x86.ActiveCfg = Release|Any CPU
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Debug|x86.ActiveCfg = Debug|x86
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Debug|x86.Build.0 = Debug|x86
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Release|x86.ActiveCfg = Release|x86
+		{304AE734-8B74-430B-B310-ADE171E0F5A1}.Release|x86.Build.0 = Release|x86
+		{A1206050-836E-4814-8D05-6327952AAE97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1206050-836E-4814-8D05-6327952AAE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1206050-836E-4814-8D05-6327952AAE97}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1206050-836E-4814-8D05-6327952AAE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1206050-836E-4814-8D05-6327952AAE97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1206050-836E-4814-8D05-6327952AAE97}.Release|x86.ActiveCfg = Release|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828C22AF-0032-49D7-B2B1-49971629A855}.Release|x86.ActiveCfg = Release|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C}.Release|x86.ActiveCfg = Release|Any CPU
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Debug|x86.ActiveCfg = Debug|x86
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Debug|x86.Build.0 = Debug|x86
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D123BC07-822B-48DD-B275-96538CD6A8F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1063EEC-4293-49CF-88F0-06F299132AB0}.Release|x86.ActiveCfg = Release|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B}.Release|x86.ActiveCfg = Release|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B47FE0C-1B9C-4A63-B697-D9F483FEAE59}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69}.Release|x86.ActiveCfg = Release|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11}.Release|x86.ActiveCfg = Release|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880}.Release|x86.ActiveCfg = Release|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6183B20F-DD9B-4466-9FC1-4258BB411921}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A98576CD-724B-4C62-85F1-B3AE1F927FDB} = {5646F46E-A5C6-411B-BBED-EBA386F4EFC2}
+		{C4AB5478-AAFC-4166-97D0-51875AA5CC09} = {5646F46E-A5C6-411B-BBED-EBA386F4EFC2}
+		{304AE734-8B74-430B-B310-ADE171E0F5A1} = {BA433BD3-358B-47B2-9E7A-DBDD19CB0214}
+		{A1206050-836E-4814-8D05-6327952AAE97} = {BA433BD3-358B-47B2-9E7A-DBDD19CB0214}
+		{E01E0C5C-6934-4C32-9711-1977BE2D59DD} = {F1B1B319-D17D-4C9F-ADCF-2204B5B287BC}
+		{828C22AF-0032-49D7-B2B1-49971629A855} = {F1B1B319-D17D-4C9F-ADCF-2204B5B287BC}
+		{58191DBE-5A25-4A73-A144-3D5DBC24C59C} = {F1B1B319-D17D-4C9F-ADCF-2204B5B287BC}
+		{D123BC07-822B-48DD-B275-96538CD6A8F8} = {68747E5C-B5FB-4830-8F0B-F8433FACAFF3}
+		{C1063EEC-4293-49CF-88F0-06F299132AB0} = {34EDF454-2B59-4A04-8207-A394F7C6638F}
+		{B0C7BBA7-B71F-47AA-ADF2-54570B300B9B} = {68747E5C-B5FB-4830-8F0B-F8433FACAFF3}
+		{EDAC4459-A5A7-4D14-9BDB-A8A542D428A3} = {0E38E14D-4595-47D1-B0F8-A9F5F0D44381}
+		{D11EDF7B-E68C-4A02-B2CA-1D1CDBF05885} = {5646F46E-A5C6-411B-BBED-EBA386F4EFC2}
+		{B4A1AD16-74B2-4F54-AFA9-A90B22276B69} = {BA433BD3-358B-47B2-9E7A-DBDD19CB0214}
+		{665B802D-5730-4B21-BA54-C4626CA5C148} = {5646F46E-A5C6-411B-BBED-EBA386F4EFC2}
+		{15C4C4B9-BBF0-4884-B41B-A3C9289C08F5} = {5646F46E-A5C6-411B-BBED-EBA386F4EFC2}
+		{A14637C0-94E7-4954-9B8D-6ABE5FFA9C11} = {34EDF454-2B59-4A04-8207-A394F7C6638F}
+		{6C5CB5E3-C2B6-44C8-8A48-8F198721C880} = {68747E5C-B5FB-4830-8F0B-F8433FACAFF3}
+		{1683EC01-1CAB-4CFD-A37B-84981CF477A0} = {0E38E14D-4595-47D1-B0F8-A9F5F0D44381}
+		{6183B20F-DD9B-4466-9FC1-4258BB411921} = {0E38E14D-4595-47D1-B0F8-A9F5F0D44381}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 18
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs03
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Antlr3.Runtime.SL\\Antlr3.Runtime.SL.csproj
+		SccProjectTopLevelParentUniqueName1 = BFsharp.sln
+		SccProjectName1 = Antlr3.Runtime.SL
+		SccLocalPath1 = Antlr3.Runtime.SL
+		SccProjectUniqueName2 = BFsharp\\BFsharp.csproj
+		SccProjectName2 = BFsharp
+		SccLocalPath2 = BFsharp
+		SccProjectUniqueName3 = BFsharp.Formula\\BFsharp.Formula.csproj
+		SccProjectName3 = BFsharp.Formula
+		SccLocalPath3 = BFsharp.Formula
+		SccProjectUniqueName4 = BFsharp.Formula.Tests\\BFsharp.Formula.Tests.csproj
+		SccProjectTopLevelParentUniqueName4 = BFsharp.sln
+		SccProjectName4 = BFsharp.Formula.Tests
+		SccLocalPath4 = BFsharp.Formula.Tests
+		SccProjectUniqueName5 = BFsharp.Tests\\BFsharp.Tests.csproj
+		SccProjectTopLevelParentUniqueName5 = BFsharp.sln
+		SccProjectName5 = BFsharp.Tests
+		SccLocalPath5 = BFsharp.Tests
+		SccProjectUniqueName6 = BFsharp.VisualStudioExtensions\\BFsharp.VisualStudioExtensions.csproj
+		SccProjectName6 = BFsharp.VisualStudioExtensions
+		SccLocalPath6 = BFsharp.VisualStudioExtensions
+		SccProjectUniqueName7 = BFsharp.Formula.SL\\BFsharp.Formula.SL.csproj
+		SccProjectTopLevelParentUniqueName7 = BFsharp.sln
+		SccProjectName7 = BFsharp.Formula.SL
+		SccLocalPath7 = BFsharp.Formula.SL
+		SccProjectUniqueName8 = BFsharp.SL\\BFsharp.SL.csproj
+		SccProjectTopLevelParentUniqueName8 = BFsharp.sln
+		SccProjectName8 = BFsharp.SL
+		SccLocalPath8 = BFsharp.SL
+		SccProjectUniqueName9 = BFsharp.Samples.SL\\BFsharp.Samples.SL.csproj
+		SccProjectTopLevelParentUniqueName9 = BFsharp.sln
+		SccProjectName9 = BFsharp.Samples.SL
+		SccLocalPath9 = BFsharp.Samples.SL
+		SccProjectUniqueName10 = BFsharp.WP7\\BFsharp.WP7.csproj
+		SccProjectTopLevelParentUniqueName10 = BFsharp.sln
+		SccProjectName10 = BFsharp.WP7
+		SccLocalPath10 = BFsharp.WP7
+		SccProjectUniqueName11 = BFsharp.AOP\\BFsharp.AOP.csproj
+		SccProjectTopLevelParentUniqueName11 = BFsharp.sln
+		SccProjectName11 = BFsharp.AOP
+		SccLocalPath11 = BFsharp.AOP
+		SccProjectUniqueName12 = BFsharp.AOP.SL\\BFsharp.AOP.SL.csproj
+		SccProjectTopLevelParentUniqueName12 = BFsharp.sln
+		SccProjectName12 = BFsharp.AOP.SL
+		SccLocalPath12 = BFsharp.AOP.SL
+		SccProjectUniqueName13 = BFsharp.Tests.SL\\BFsharp.Tests.SL.csproj
+		SccProjectTopLevelParentUniqueName13 = BFsharp.sln
+		SccProjectName13 = BFsharp.Tests.SL
+		SccLocalPath13 = BFsharp.Tests.SL
+		SccProjectUniqueName14 = BFsharp.Samples.WP7\\BFsharp.Samples.WP7.csproj
+		SccProjectTopLevelParentUniqueName14 = BFsharp.sln
+		SccProjectName14 = BFsharp.Samples.WP7
+		SccLocalPath14 = BFsharp.Samples.WP7
+		SccProjectUniqueName15 = BFsharp.AOP.WP7\\BFsharp.AOP.WP7.csproj
+		SccProjectTopLevelParentUniqueName15 = BFsharp.sln
+		SccProjectName15 = BFsharp.AOP.WP7
+		SccLocalPath15 = BFsharp.AOP.WP7
+		SccProjectUniqueName16 = BFsharp.Formula.WP7\\BFsharp.Formula.WP7.csproj
+		SccProjectTopLevelParentUniqueName16 = BFsharp.sln
+		SccProjectName16 = BFsharp.Formula.WP7
+		SccLocalPath16 = BFsharp.Formula.WP7
+		SccProjectUniqueName17 = Antlr3.Runtime.WP7\\Antlr3.Runtime.WP7.csproj
+		SccProjectTopLevelParentUniqueName17 = BFsharp.sln
+		SccProjectName17 = Antlr3.Runtime.WP7
+		SccLocalPath17 = Antlr3.Runtime.WP7
+	EndGlobalSection
+EndGlobal
