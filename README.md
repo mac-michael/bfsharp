@@ -1,8 +1,6 @@
 # bfsharp
 A framework which helps building business applications.
-
 It provides business rules, validation rules and a text-based language for writing rules.
-
 It supports automatic dependency detection, automatic rule reevaluation.
 
 - 8 August 2011: SwitchRule - better rule groups management; Client\Server context, ValidateOnlyOnServerSide
