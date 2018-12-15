@@ -8,11 +8,11 @@ It supports automatic dependency detection, automatic rule reevaluation.
 - 27 July 2011: Rules with Automatic Dependency Analysis support in WP7. Now rules can be truly multiplatform (.Net, SL, WP7).
 - 24 July 2011: Major performance improvments and expression caching (alpha). To turn it on use ExtensionsOptions.CacheLambdas.
 
-A new tutorial was created. You can find it here.
+A new tutorial was created. You can find it [here](https://github.com/mac-michael/bfsharp/tutorial.html).
 
 To view LiveSamples go here.
 
-Now with NuGet integration - you can find it here.
+Now with NuGet integration - you can find it [here](http://nuget.org/List/Packages/BFsharp).
 
 BFsharp
 Provides several features which help in building business applications:
