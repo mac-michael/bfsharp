@@ -1,12 +1,14 @@
 # bfsharp
 A framework which helps building business applications.
+
 It provides business rules, validation rules and a text-based language for writing rules.
+
 It supports automatic dependency detection, automatic rule reevaluation.
 
-8 August 2011: SwitchRule - better rule groups management; Client\Server context, ValidateOnlyOnServerSide
-28 July 2011: Formula DSL language is available in WP7.
-27 July 2011: Rules with Automatic Dependency Analysis support in WP7. Now rules can be truly multiplatform (.Net, SL, WP7).
-24 July 2011: Major performance improvments and expression caching (alpha). To turn it on use ExtensionsOptions.CacheLambdas.
+- 8 August 2011: SwitchRule - better rule groups management; Client\Server context, ValidateOnlyOnServerSide
+- 28 July 2011: Formula DSL language is available in WP7.
+- 27 July 2011: Rules with Automatic Dependency Analysis support in WP7. Now rules can be truly multiplatform (.Net, SL, WP7).
+- 24 July 2011: Major performance improvments and expression caching (alpha). To turn it on use ExtensionsOptions.CacheLambdas.
 
 A new tutorial was created. You can find it here.
 
