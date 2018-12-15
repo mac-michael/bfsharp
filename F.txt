@@ -1,0 +1,23 @@
+type Customer() =
+    inherit EntityBase<Customer>() 
+    let mutable id = 0
+    let mutable name = ""
+    member this.Id
+        with get() = id
+        and set v = id <- v; base.OnPropertyChanged("Id")
+        
+    [<MaxLength(16)>]
+    member this.Name 
+        with get() = name  
+        and set v = name <- v; base.OnPropertyChanged("Name")
+
+let cus = new Customer(Id=1,Name="yo")
+cus.Extensions.InitializeRules()
+
+cus.Extensions.BrokenRules.Count
+cus.Extensions.BrokenRules
+|> Seq.iter (fun b -> printfn "%s" b.Message)
+
+let rule = cus.Extensions.CreateValidationRule(@"Name.Contains(""a"")")
+RuleExtensions.WithMessage(rule, "Name musi zawierac literke 'a'")
+RuleExtensions.Start(rule)
