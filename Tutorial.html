@@ -1,0 +1,198 @@
+<div class="wikidoc">
+<h1>What is BFsharp?</h1>
+<p>It's a library which provides several services assosiated with entity management:</p>
+<ul>
+<li>Rules - they allow to define reusable code which can be executed in response to property change (strategy pattern).
+</li><li>DynamicProperties - entity can be extended dynamically. </li><li>Formula DSL - textual language which can be used to write rules. Moreover it can be used without rules so as to customize other functionality.
+</li><li>IsDirty - marks entity as dirty in response to property change. </li><li>Entity management - groups entity into aggregates - concepts known from Domain Driven Design. It allows to manage entites in logical groups. Let's take invoice as an example. If any of InvoiceLines (child) is modified or validated the Invoice ( parent )
+ should be notified to react accordingly. </li></ul>
+<p>It's supported on the following platforms:</p>
+<ul>
+<li>.Net </li><li>Silverlight </li><li>WP7 (under development) </li></ul>
+<h1>Getting started</h1>
+<p>First of all you need to enable BFsharp support in your code. You can do this using
+<a href="http://nuget.org">NuGet</a> or manually adding reference to BFsharp.dll and optionally BFsharp.AOP.dll. BFSharp supports .net 3.5, silverlight 4 (assemblies ending with .SL) and experimentally WP7 (assemblies ending with .WP7). Next you need to derive
+ your class from EntityBase&lt;T&gt;, for example:</p>
+<pre>public class Product : EntityBase&lt;Product&gt;
+{
+    public string Name { get; set; }
+    public decimal NetPrice { get; set; }
+    public decimal Rate { get; set; }
+    public decimal GrossPrice { get; set; }
+    public decimal Tax { get; set; }
+}
+</pre>
+<p>BFsharp relies heavily on INotifyPropertyChanged interface. You can implement it manually or use the aspect which will do everything for you.</p>
+<pre>[NotifyPropertyChanged]
+public class Product : EntityBase&lt;Product&gt;
+{
+    public string Name { get; set; }
+    public decimal NetPrice { get; set; }
+    public decimal Rate { get; set; }
+    public decimal GrossPrice { get; set; }
+    public decimal Tax { get; set; }
+}</pre>
+<p>If you can't derive your class from EntityBase because you need to use inheritance for some other purpose or simply you do not have access to the code ( for example compiled class ) there is a way. You have to register extensions for your object.</p>
+<pre>var c = new ClassWithoutSourceCode();
+var e= EntityExtensions.RegisterTypedObject(e);
+e.CreateValidationRule(x =&gt; x.Name.Length &gt; 3)
+    .Start();
+</pre>
+<p>Now, you can access BFsharp API from the Extensions property.</p>
+<h1>Rules</h1>
+<p>Rules are one of the many features you can find in BFsharp. They allow to define reusable code which can be executed in response to property change (strategy pattern). There're several types of rules:</p>
+<ol>
+<li>ValidationRule - checks for specified condition and if it's false creates a BrokenRule which can be later used to show error to the end-user in the UI. For example, to check that NetPrice must be greater than zero you could write:
+<pre>var p = new Product();
+p.Extensions.CreateValidationRule(x =&gt; x.NetPrice &gt; 0)
+                .WithMessage(&quot;NetPrice must be greater than zero.&quot;)
+                .Start();
+</pre>
+Every time the NetPrice property is changed ( INotifyPropertyChanged ) this rule is evaluated. If predicate is false the rule is said to be broken and a BrokenRule class is created with information about the error. Moreover EntityBase implements several interfaces
+ which are used in WPF and Silverlight to display errors automatically.
+<pre>p.Extensions.BrokenRules[0].Message.ShouldEqual(&quot;NetPrice must be greater than zero.&quot;);
+p.Extensions.BrokenRules[0].Severity.ShouldEqual(BrokenRuleSeverity.Error);
+</pre>
+Validation rules can also be specifed using attributes, for example:
+<pre>[NotifyPropertyChanged]
+public class Customer : EntityBase&lt;Product&gt;
+{
+    [Required, Email, MaxLength(100)]
+    public string Name { get; set; }
+    [Range(0,100)]
+    public decimal NetPrice { get; set; }
+}</pre>
+There are several predefinied rules and you can create your own:
+<ol>
+<li>Required </li><li>MaxLength </li><li>Email </li><li>Pattern </li><li>Range </li><li>ShouldBe </li></ol>
+They are created and started with InitializeRules method. </li><li>BusinessRule - consists of func and target. In response to property changed the formula is recalculated and assigned to target. BusinessRule can also work as a ValidationRule. For example, to automatically calculate GrossPrice from Rate and NetPrice:
+<pre>p.Extensions.CreateBusinessRule(x =&gt; x.NetPrice * x.Rate, x =&gt; x.GrossPrice)
+                .Start();
+</pre>
+You can ask: &quot;Why do I need this? I can encapsulate this forumla in GrossPrice property making it read-only&quot;. However, there are several drawbacks in this approach:
+<ol>
+<li>This approach is not reusable. </li><li>The rule formula cannot be changed without compilation. </li><li>There is no support for notification for this property and it's impossible to bind this property to UI.
+</li><li>Using this approach you cannot implement easily the following scenario: calculate GrossPrice when user changes NetPrice, calucalte NetPrice when user changed GrossPrice - so called rule cycle.
+</li></ol>
+Moreover BFsharp supports rules created from string (Formula language), you could write:
+<pre>p.Extensions.CreateBusinessRule(&quot;GrossPrice=NetPrice*Rate&quot;)
+                .Start();
+</pre>
+Using this functionality you can easily externalize rules and make them customizable for the end-user\system administrator.
+</li><li>ActionRules - executes an action in response to a property change. For example you can use it to execute WebService and check the availability of the entered mail.
+<pre>var c = new Customer();
+c.Extensions.CreateActionRule(x =&gt; CheckIfEmailIsAvailable(x.Email))
+                .Start();
+</pre>
+</li></ol>
+<p>Rules are invoked only if one of the properties used in the rule definition is changed. If you want to specify the dependencies by hand you could write:</p>
+<pre>p.Extensions.CreateValidationRuleWithoutDependency(x =&gt; x.NetPrice &gt; 0)
+                .WithDependencies(x=&gt;x.Tax) // Expression, stronly-typed, compile time name validation
+                .WithDependencies(&quot;NetPrice&quot;, &quot;GrossPrice&quot;) // String, usefull for tools and infrastructure code
+                .Start();
+</pre>
+<p>Althought rules can be added from any place in code, there is a pattern to do it.</p>
+<h1>Validation</h1>
+<p>Extensions object has several member which are used to interact with the validation system:</p>
+<ol>
+<li>IsValid - this property tells whether the entity is in a valid state. If rules with automatic dependency are used it's updated in real-time in response to property changed notification. Moreover the property throws INotifyPropertyChanged hence it can be
+ binded to UI easily. </li><li>Validate - the method allows to validate the entire entity on demand. It's useful when an entity doesn't support INotifyPropertyChange, rules doesn't use automatic dependency or the are started without validation.
+</li><li>Rules - a collection of rules associated with the current entity. </li><li>BrokenRules - a collection of objects which represents erorrs and warnings associated with the current entity.
+</li></ol>
+<h1>Rule options</h1>
+<p>Rules have several options which can be accessed using properties or Fluent Interface:</p>
+<ol>
+<li>Rule Name - rules can be named. It can be useful for identifying rules or getting them by name.
+<pre>rule.WithName(&quot;NetPriceCalculation&quot;);
+</pre>
+</li><li>DebugString - rules can have debug string which can be useful during debugging. If rule is created using Expression contains the textual body representation.
+<pre>var r = e.Extensions.CreateBusinessRule(en =&gt; en.Number2 &#43; 5, en =&gt; en.Number)
+                .Start();
+
+// Now r.DebugString is equal to en.Number = (en.Number2 &#43; 5)
+</pre>
+<pre>rule.WithDebugString(&quot;Some debug string&quot;);
+</pre>
+</li><li>Rule modes - each rule has one or mode modes which control when they are evaluated\validated or invoked.
+<ol>
+<li>ValidationRule
+<ul>
+<li>StartupMode - controls whether the rule is automatically validated during startup. The default is Validate.
+</li></ul>
+</li><li>BusinessRule
+<ul>
+<li>StartupMode - controls what happens when the rule is started. Available options are: none, validate, evaluate.
+</li><li>Mode - in response to dependency changed BusinessRule can be evaluated or validated.
+</li><li>TargetChangeAction - when the target property is changed BF can take the following action: None, Override or Validate. Validate option will evaluate function and then compares it with target, when they are different a broken rule is created. Override strategy
+ simply overrides the property with function evaluation. </li><li>DisableValidation - by default BusinessRule is validated during its lifetime, that means if target is different from function it creates broken rule. You can disable this behavior with this switch.
+</li></ul>
+</li><li>ActionRule
+<ul>
+<li>StartupMode - controls whether the rule is automatically invoked during startup. The default is none.
+</li></ul>
+</li></ol>
+There are defined several convinient Fluent Interface methods which control rule modes, the all start with With.
+</li><li>Tags - every rule has a property named Tag. It can be used to store some user-defined data. There are several helper methods which can interact with rules and tag.
+<ol>
+<li>EnableByTag - enables all rules with the specified tag </li><li>SwitchRulesByTag - enables all rules with the specified tag and disables the rest
+</li><li>ReevaluateRulesByTag - invoke ( ctionRule) or evaluate (BusinessRule) with the specified tag
+</li></ol>
+</li><li>Exception Filter - sometimes rules can throw exceptions. They can be caught by BFsharp infrastructure and processed as a BrokenRule. For example let's take division by zero.
+<pre>p.Extensions.CreateBusinessRule(x =&gt; x.GrossPrice / x.NetPrice-1, x =&gt; x.Rate)
+                .WithException&lt;DivideByZeroException&gt;(&quot;DivisionByZeroMessage&quot;, BrokenRuleSeverity.Error)
+                .Start();
+
+p.NetPrices = 0; // In this line a new BrokenRule is created in response to 
+                 // DivisionByZeroException which is thrown from the rule
+</pre>
+</li><li>Rule Prototypes - rules can be copied. This enables some interesting scenarios, namely rule prototypes. Rules definition can be stored in some kind of repository. At the start of the application it is read and rules are instantiated. Then these prototype
+ rules are copied and added to every entity which is created. Prototype rules are faster to create because they do not need to analyze dependencies. It's as fast as memory copy.
+<pre>var factory = new RuleFactory≶Entity&gt;();
+var rule = factory.CreateValidationRule(en =&gt; en.Number &gt; 5).Start();
+
+var e = new Entity();
+e.Extensions.AddRuleFromPrototype(rule).Start();
+</pre>
+</li><li>Rule Suppression - rules can fire each other. You can disable rule evaluation by other rules using several methods:
+<ol>
+<li>Suppresses </li><li>MutuallySuppressedBy </li><li>DisableRecursion </li></ol>
+</li><li>Rule Priority - if you have two rules which are fired in response to the same property change you can specify which should run first.
+<pre>e.Extensions.CreateActionRuleWithoutDependency(en =&gt; lastRule=&quot;one&quot;)
+                .WithDependencies(en=&gt;en.Number)
+                .Start();
+
+e.Extensions.CreateActionRuleWithoutDependency(en =&gt; lastRule = &quot;two&quot;)
+                .WithDependencies(en =&gt; en.Number)
+                .WithHighPriority()
+                .Start();
+</pre>
+Other: WithLowPriority, WithPriority(int priority), WithPriority(RulePriority priority). These methods set an int property Rule.Priority. The greater number the higher priority it represents. You could also use RulePriority enum which defines several priority
+ levels:
+<pre>public enum RulePriority
+{
+    VeryLow = -20,
+    Low = -10,
+    Normal = 0,
+    High = 10,
+    VeryHigh = 20
+}
+</pre>
+</li></ol>
+<h2>Dynamic Properties</h2>
+<p>Rules provide a way to extend behavior. Dynamic properties extend the data model.</p>
+<pre>var e = new Entity();
+e.Extensions.AddProperty&lt;int&gt;(&quot;name&quot;);
+
+e.Extensions.DynamicProperties[&quot;name&quot;] = 4;
+</pre>
+<p>Dynamic Properties support databinding and other technology based on reflection. There is a special property called TypedProxy which provides dynamic class generated based on the definition. It supports INotifyPropertyChanged.</p>
+<pre>object typedProxy = e.Extensions.DynamicProperties.TypedProxy;
+</pre>
+<h2>IsDirty</h2>
+<p>It'a mechanism which tells if the entity is edited. It can be used in the user interface to show a modification marker.</p>
+<pre>var p = new Product();
+p.Extensions.StartDirtyTracking();
+p.Name = &quot;a&quot;;
+// p.Extensions.IsDirty is true now<span style="font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif"><span style="white-space:normal">
+</span></span></pre>
+</div><div class="ClearBoth"></div>
